@@ -1,0 +1,7 @@
+C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\EngineTutorial\bin\x86\Debug\EngineTutorial.dll
+C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\EngineTutorial\bin\x86\Debug\EngineTutorial.pdb
+C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\EngineTutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.dll
+C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.pdb
+C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\EngineTutorial\bin\x86\Debug\JigLibX.dll
+C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.csprojResolveAssemblyReference.cache

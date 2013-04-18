@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineTutorial", "EngineTutorial\EngineTutorial.csproj", "{749ECD99-D0EB-49B2-9B3D-8A2AD7D98B28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEnvironment", "GameEnvironment\GameEnvironment\GameEnvironment.csproj", "{7AAC244E-BED9-429B-A55D-E02A2CFC593F}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "GameEnvironmentContent", "GameEnvironment\GameEnvironmentContent\GameEnvironmentContent.contentproj", "{BA32CE8A-9BB0-4E7B-8E09-15F7DAE49B1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{749ECD99-D0EB-49B2-9B3D-8A2AD7D98B28}.Debug|x86.ActiveCfg = Debug|x86
+		{749ECD99-D0EB-49B2-9B3D-8A2AD7D98B28}.Debug|x86.Build.0 = Debug|x86
+		{749ECD99-D0EB-49B2-9B3D-8A2AD7D98B28}.Release|x86.ActiveCfg = Release|x86
+		{749ECD99-D0EB-49B2-9B3D-8A2AD7D98B28}.Release|x86.Build.0 = Release|x86
+		{7AAC244E-BED9-429B-A55D-E02A2CFC593F}.Debug|x86.ActiveCfg = Debug|x86
+		{7AAC244E-BED9-429B-A55D-E02A2CFC593F}.Debug|x86.Build.0 = Debug|x86
+		{7AAC244E-BED9-429B-A55D-E02A2CFC593F}.Release|x86.ActiveCfg = Release|x86
+		{7AAC244E-BED9-429B-A55D-E02A2CFC593F}.Release|x86.Build.0 = Release|x86
+		{BA32CE8A-9BB0-4E7B-8E09-15F7DAE49B1B}.Debug|x86.ActiveCfg = Debug|x86
+		{BA32CE8A-9BB0-4E7B-8E09-15F7DAE49B1B}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
