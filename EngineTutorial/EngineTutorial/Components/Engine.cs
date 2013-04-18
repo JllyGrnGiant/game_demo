@@ -34,7 +34,7 @@ namespace Innovation
 
             // Setup background screen
             BackgroundScreen = new GameScreen("Engine.BackgroundScreen");
-            BackgroundScreen.OverrideUpdateBlocked = true;
+            BackgroundScreen.OverrideUpdateBlocked = false;
             BackgroundScreen.OverrideDrawBlocked = true;
             BackgroundScreen.OverrideInputBlocked = true;
 

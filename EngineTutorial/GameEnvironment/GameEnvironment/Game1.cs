@@ -18,6 +18,8 @@ namespace GameEnvironment
         //bool fired = false;
 
         GaussianBlur blur;
+        GameScreen pause;
+        Vector2 paused_mouse_position;
 
         public Game1()
         {
@@ -74,6 +76,9 @@ namespace GameEnvironment
 
             blur = new GaussianBlur(Engine.GraphicsDevice.Viewport.Width, Engine.GraphicsDevice.Viewport.Height);
             blur.Visible = false; // This'll keep the engine from drawing it before we want it to
+
+            pause = new GameScreen("Pause");
+            pause.Components.Add(Engine.Services.GetService<KeyboardDevice>());
         }
 
         protected override void Update(GameTime gameTime)
@@ -84,28 +89,40 @@ namespace GameEnvironment
             MouseDevice mouse = Engine.Services.GetService<MouseDevice>();
             FPSCamera cam = (FPSCamera)Engine.Services.GetService<Camera>();
 
-            if (keyboard.IsKeyDown(Keys.Escape))
-                Exit();
+            //if (keyboard.IsKeyDown(Keys.Escape))
+            //    Exit();
 
-            Vector3 inputModifier = new Vector3(
-                (keyboard.IsKeyDown(Keys.A) ? -1 : 0) + (keyboard.IsKeyDown(Keys.D) ? 1 : 0),
-                (keyboard.IsKeyDown(Keys.Q) ? -1 : 0) + (keyboard.IsKeyDown(Keys.E) ? 1 : 0),
-                (keyboard.IsKeyDown(Keys.W) ? -1 : 0) + (keyboard.IsKeyDown(Keys.S) ? 1 : 0));
-
-            cam.RotateTranslate(new Vector3(mouse.Delta.Y * -0.002f, mouse.Delta.X * -0.002f, 0), inputModifier * 0.5f);
-
-            if (Engine.Services.GetService<MouseDevice>().WasButtonPressed(MouseButtons.Left))
+            if (keyboard.WasKeyPressed(Keys.Escape))
             {
-                PhysicsActor act = new PhysicsActor(
-                    Engine.Content.Load<Model>("Content/ig_box"),
-                    new BoxObject(new Vector3(0.5f), cam.Position, Vector3.Zero));
+                pause.BlocksUpdate = !pause.BlocksUpdate;
+                if (pause.BlocksUpdate)
+                    paused_mouse_position = mouse.Position;
+                else
+                    mouse.Position = paused_mouse_position;
+            }
 
-                act.Scale = new Vector3(0.5f);
-                act.PhysicsObject.Mass = 1000;
+            if (!pause.BlocksUpdate)
+            {
+                Vector3 inputModifier = new Vector3(
+                    (keyboard.IsKeyDown(Keys.A) ? -1 : 0) + (keyboard.IsKeyDown(Keys.D) ? 1 : 0),
+                    (keyboard.IsKeyDown(Keys.Q) ? -1 : 0) + (keyboard.IsKeyDown(Keys.E) ? 1 : 0),
+                    (keyboard.IsKeyDown(Keys.W) ? -1 : 0) + (keyboard.IsKeyDown(Keys.S) ? 1 : 0));
 
-                Vector3 dir = cam.Target - cam.Position;
-                dir.Normalize();
-                act.PhysicsObject.Velocity = dir * 10;
+                cam.RotateTranslate(new Vector3(mouse.Delta.Y * -0.002f, mouse.Delta.X * -0.002f, 0), inputModifier * 0.5f);
+
+                if (Engine.Services.GetService<MouseDevice>().WasButtonPressed(MouseButtons.Left))
+                {
+                    PhysicsActor act = new PhysicsActor(
+                        Engine.Content.Load<Model>("Content/ig_box"),
+                        new BoxObject(new Vector3(0.5f), cam.Position, Vector3.Zero));
+
+                    act.Scale = new Vector3(0.5f);
+                    act.PhysicsObject.Mass = 1000;
+
+                    Vector3 dir = cam.Target - cam.Position;
+                    dir.Normalize();
+                    act.PhysicsObject.Velocity = dir * 10;
+                }
             }
 
             base.Update(gameTime);

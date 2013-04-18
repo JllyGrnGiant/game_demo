@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\grass.xnb</Output>
-      <Time>2013-02-09T23:13:02.8208187-07:00</Time>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\grass.xnb</Output>
+      <Time>2013-04-18T10:11:37.5983081-06:00</Time>
     </Item>
     <Item>
       <Source>heightmap.bmp</Source>
@@ -16,8 +16,35 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\heightmap.xnb</Output>
-      <Time>2013-02-10T20:37:24.3080673-07:00</Time>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\heightmap.xnb</Output>
+      <Time>2013-04-18T10:11:37.6149936-06:00</Time>
+    </Item>
+    <Item>
+      <Source>red.jpg</Source>
+      <Name>red</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\red.xnb</Output>
+      <Time>2013-04-18T10:11:37.6469723-06:00</Time>
+    </Item>
+    <Item>
+      <Source>green.jpg</Source>
+      <Name>green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\green.xnb</Output>
+      <Time>2013-04-18T10:11:37.611601-06:00</Time>
+    </Item>
+    <Item>
+      <Source>blue.jpg</Source>
+      <Name>blue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\blue.xnb</Output>
+      <Time>2013-04-18T10:11:37.580293-06:00</Time>
     </Item>
     <Item>
       <Source>ig_box.fbx</Source>
@@ -25,13 +52,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box.xnb</Output>
-      <Time>2013-01-22T21:05:57.2494837-07:00</Time>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box.xnb</Output>
+      <Time>2013-04-18T10:11:37.6183266-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2013-04-11T10:37:28.5795339-06:00</Value>
+        <Value>2013-04-18T10:12:35.1227631-06:00</Value>
       </Dependency>
-      <Request>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
+      <Request>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
     <Item>
       <Source>ig_plane.fbx</Source>
@@ -39,13 +66,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane.xnb</Output>
-      <Time>2013-02-08T10:35:40.7848457-07:00</Time>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane.xnb</Output>
+      <Time>2013-04-18T10:11:37.6273326-06:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_plane_0.xml</Key>
-        <Value>2013-04-11T10:37:31.1577973-06:00</Value>
+        <Value>2013-04-18T10:12:35.9013579-06:00</Value>
       </Dependency>
-      <Request>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane_tex_0.xnb</Request>
+      <Request>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane_tex_0.xnb</Request>
     </Item>
     <Item>
       <Source>GaussianBlur.fx</Source>
@@ -53,15 +80,24 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\GaussianBlur.xnb</Output>
-      <Time>2013-02-10T22:20:45.7810673-07:00</Time>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\GaussianBlur.xnb</Output>
+      <Time>2013-04-18T10:11:37.5769667-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Effect1.fx</Source>
+      <Name>Effect1</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\Effect1.xnb</Output>
+      <Time>2013-04-18T10:11:37.5739174-06:00</Time>
     </Item>
     <Item>
       <Source>ig_box.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ig_box_0.xml</Output>
-      <Time>2013-01-22T21:05:57.2494837-07:00</Time>
+      <Time>2013-04-18T10:11:37.6183266-06:00</Time>
     </Item>
     <Item>
       <Source>ig_box_tex.png</Source>
@@ -76,15 +112,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
-      <Time>2013-02-07T19:04:33.5374742-07:00</Time>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
+      <Time>2013-04-18T10:11:37.6243306-06:00</Time>
     </Item>
     <Item>
       <Source>ig_plane.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ig_plane_0.xml</Output>
-      <Time>2013-02-08T10:35:40.7848457-07:00</Time>
+      <Time>2013-04-18T10:11:37.6273326-06:00</Time>
     </Item>
     <Item>
       <Source>ig_plane_tex.png</Source>
@@ -99,44 +135,8 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane_tex_0.xnb</Output>
-      <Time>2013-02-08T10:35:40.7848457-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Effect1.fx</Source>
-      <Name>Effect1</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\Effect1.xnb</Output>
-      <Time>2013-04-15T16:47:00.5096655-06:00</Time>
-    </Item>
-    <Item>
-      <Source>red.jpg</Source>
-      <Name>red</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\red.xnb</Output>
-      <Time>2013-04-15T15:34:22.0921439-06:00</Time>
-    </Item>
-    <Item>
-      <Source>green.jpg</Source>
-      <Name>green</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\green.xnb</Output>
-      <Time>2013-04-15T15:35:54.2345507-06:00</Time>
-    </Item>
-    <Item>
-      <Source>blue.jpg</Source>
-      <Name>blue</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\blue.xnb</Output>
-      <Time>2013-04-15T15:47:32.0695036-06:00</Time>
+      <Output>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane_tex_0.xnb</Output>
+      <Time>2013-04-18T10:11:37.6283353-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -144,10 +144,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironmentContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironmentContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironmentContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironmentContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
