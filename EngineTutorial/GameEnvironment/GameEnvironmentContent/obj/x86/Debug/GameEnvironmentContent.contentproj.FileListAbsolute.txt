@@ -1,2 +1,3 @@
 C:\Users\Joshua\My Programs and Code\game engine tutorial\EngineTutorial\GameEnvironment\GameEnvironmentContent\obj\x86\Debug\GameEnvironmentContent.contentprojResolveAssemblyReference.cache
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironmentContent\obj\x86\Debug\GameEnvironmentContent.contentprojResolveAssemblyReference.cache
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironmentContent\obj\x86\Debug\GameEnvironmentContent.contentprojResolveAssemblyReference.cache

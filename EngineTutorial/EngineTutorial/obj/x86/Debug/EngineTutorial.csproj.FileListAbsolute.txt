@@ -12,3 +12,10 @@ C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\EngineTutorial\obj
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\EngineTutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.dll
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.pdb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\EngineTutorial\bin\x86\Debug\EngineTutorial.dll
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\EngineTutorial\bin\x86\Debug\EngineTutorial.pdb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\EngineTutorial\bin\x86\Debug\JigLibX.dll
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.csprojResolveAssemblyReference.cache
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\EngineTutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.dll
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\EngineTutorial\obj\x86\Debug\EngineTutorial.pdb

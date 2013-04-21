@@ -130,6 +130,7 @@
     <Compile Include="SerializationData.cs" />
     <Compile Include="Serializer.cs" />
     <Compile Include="SphereObject.cs" />
+    <Compile Include="SpriteTest.cs" />
     <Compile Include="Terrain.cs" />
     <Compile Include="Terrain2.cs" />
     <Compile Include="TerrainMaterial.cs" />

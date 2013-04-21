@@ -18,7 +18,7 @@ namespace GameEnvironment
         //bool fired = false;
 
         GaussianBlur blur;
-        GameScreen pause;
+        //GameScreen pause;
         Vector2 paused_mouse_position;
 
         public Game1()
@@ -77,8 +77,6 @@ namespace GameEnvironment
             blur = new GaussianBlur(Engine.GraphicsDevice.Viewport.Width, Engine.GraphicsDevice.Viewport.Height);
             blur.Visible = false; // This'll keep the engine from drawing it before we want it to
 
-            pause = new GameScreen("Pause");
-            pause.Components.Add(Engine.Services.GetService<KeyboardDevice>());
         }
 
         protected override void Update(GameTime gameTime)
@@ -94,14 +92,24 @@ namespace GameEnvironment
 
             if (keyboard.WasKeyPressed(Keys.Escape))
             {
-                pause.BlocksUpdate = !pause.BlocksUpdate;
-                if (pause.BlocksUpdate)
-                    paused_mouse_position = mouse.Position;
-                else
+                
+                if (Engine.GameScreens.Contains("Pause"))
+                {
                     mouse.Position = paused_mouse_position;
+                    Engine.GameScreens.Remove("Pause");
+                    Engine.BackgroundScreen.Components.Add(keyboard);
+                }
+                else
+                {
+                    paused_mouse_position = mouse.Position;
+                    GameScreen pause = new GameScreen("Pause");
+                    pause.Components.Add(keyboard);
+                    pause.BlocksUpdate = true;
+                    SpriteTest test = new SpriteTest(Engine.Content.Load<Texture2D>("Content/red"), pause);
+                }
             }
 
-            if (!pause.BlocksUpdate)
+            if (!Engine.GameScreens.Contains("Pause"))
             {
                 Vector3 inputModifier = new Vector3(
                     (keyboard.IsKeyDown(Keys.A) ? -1 : 0) + (keyboard.IsKeyDown(Keys.D) ? 1 : 0),

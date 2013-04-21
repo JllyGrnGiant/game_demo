@@ -19,5 +19,10 @@ namespace Innovation
 
             base.RemoveItem(index);
         }
+
+        public void RemoveScreen(int index)
+        {
+            RemoveItem(index);
+        }
     }
 }

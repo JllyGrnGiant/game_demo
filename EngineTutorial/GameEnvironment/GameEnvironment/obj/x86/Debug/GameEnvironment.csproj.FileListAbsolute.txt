@@ -38,3 +38,23 @@ C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\Ga
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\GameEnvironment.exe
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\GameEnvironment.pdb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\grass.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\heightmap.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\red.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\green.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\blue.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\GaussianBlur.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\Effect1.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_box_tex_0.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\ig_plane_tex_0.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\GameEnvironment.exe
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\GameEnvironment.pdb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\EngineTutorial.dll
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\JigLibX.dll
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\EngineTutorial.pdb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\GameEnvironment.csprojResolveAssemblyReference.cache
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\GameEnvironment.exe
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\GameEnvironment.pdb
