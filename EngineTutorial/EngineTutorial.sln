@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
+﻿Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineTutorial", "EngineTutorial\EngineTutorial.csproj", "{749ECD99-D0EB-49B2-9B3D-8A2AD7D98B28}"
 EndProject
