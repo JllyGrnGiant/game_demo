@@ -95,6 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Menu\MenuItem.cs" />
     <Compile Include="Components\Scene\Actor.cs" />
     <Compile Include="Physics\BoxObject.cs" />
     <Compile Include="Components\Cameras\Camera.cs" />

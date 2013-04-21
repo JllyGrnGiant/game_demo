@@ -105,7 +105,7 @@ namespace GameEnvironment
                     GameScreen pause = new GameScreen("Pause");
                     pause.Components.Add(keyboard);
                     pause.BlocksUpdate = true;
-                    SpriteTest test = new SpriteTest(Engine.Content.Load<Texture2D>("Content/red"), pause);
+                    MenuItem test = new MenuItem(Engine.Content.Load<SpriteFont>("Content/MenuFont"), "Paused", pause);
                 }
             }
 
