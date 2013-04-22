@@ -33,6 +33,8 @@ namespace Innovation
         {
             Vector2 texelSize = new Vector2(1f / Width, 1f / Height);
 
+            Visible = false;
+
             SetBlurParameters(texelSize.X, 0, ref sampleOffsetsH, ref sampleWeightsH);
             SetBlurParameters(0, texelSize.Y, ref sampleOffsetsV, ref sampleWeightsV);
         }
@@ -92,15 +94,18 @@ namespace Innovation
 
         public override void Draw()
         {
-            GetInputFromFrameBuffer();
-            Engine.GraphicsDevice.Clear(Color.Black);
-            SetParameters(GaussianBlurDirection.Horizontal);
-            base.Draw();
+            if (Visible)
+            {
+                GetInputFromFrameBuffer();
+                Engine.GraphicsDevice.Clear(Color.Black);
+                SetParameters(GaussianBlurDirection.Horizontal);
+                base.Draw();
 
-            GetInputFromFrameBuffer();
-            Engine.GraphicsDevice.Clear(Color.Black);
-            SetParameters(GaussianBlurDirection.Vertical);
-            base.Draw();
+                GetInputFromFrameBuffer();
+                Engine.GraphicsDevice.Clear(Color.Black);
+                SetParameters(GaussianBlurDirection.Vertical);
+                base.Draw();
+            }
         }
 
         void SetParameters(GaussianBlurDirection Direction)

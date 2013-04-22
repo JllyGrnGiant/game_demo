@@ -21,6 +21,8 @@ namespace Innovation
 
         public static bool IsInitialized = false;
 
+        public static GaussianBlur blur;
+
         // Initializes the engine
         public static void SetupEngine(IGraphicsDeviceService GraphicsDeviceService)
         {
@@ -41,6 +43,7 @@ namespace Innovation
             DefaultScreen = BackgroundScreen;
 
             Engine.IsInitialized = true;
+            blur = new GaussianBlur(Engine.GraphicsDevice.Viewport.Width, Engine.GraphicsDevice.Viewport.Height);
         }
 
         // Update the engine, screens, and components
@@ -121,8 +124,12 @@ namespace Innovation
 
             // Draw the remaining screens
             foreach (GameScreen screen in drawing)
+            {
                 if (screen.Initialized)
                     screen.Draw(DrawPredicate);
+                if (screen.Equals(Engine.BackgroundScreen))
+                    blur.Draw();
+            }
         }
 
         public static void Draw(GameTime gameTime, ComponentType DrawType)

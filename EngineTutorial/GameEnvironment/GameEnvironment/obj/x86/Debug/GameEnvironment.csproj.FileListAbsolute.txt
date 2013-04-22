@@ -59,3 +59,5 @@ C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironm
 C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\GameEnvironment.exe
 C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\obj\x86\Debug\GameEnvironment.pdb
 C:\Users\Joshua\My Programs and Code\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\MenuFont.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\MenuFont.xnb
+C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\cursor.xnb

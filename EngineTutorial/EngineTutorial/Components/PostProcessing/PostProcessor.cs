@@ -79,6 +79,7 @@ namespace Innovation
 
         public override void Draw()
         {
+            
             Engine.GraphicsDevice.Clear(Color.Black);
 
             // Begin in a mode that will overwrite everything and draw immediately

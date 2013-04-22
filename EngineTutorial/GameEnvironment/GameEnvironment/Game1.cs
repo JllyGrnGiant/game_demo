@@ -17,7 +17,9 @@ namespace GameEnvironment
         GraphicsDeviceManager graphics;
         //bool fired = false;
 
-        GaussianBlur blur;
+        //Action delegate1 = delegate() { (object o, InputDeviceEventArgs<MouseButtons, MouseState> args) => ResumeHandler(o, args, resume); };
+
+        //GaussianBlur blur;
         //GameScreen pause;
         Vector2 paused_mouse_position;
 
@@ -74,8 +76,8 @@ namespace GameEnvironment
                 }
             }
 
-            blur = new GaussianBlur(Engine.GraphicsDevice.Viewport.Width, Engine.GraphicsDevice.Viewport.Height);
-            blur.Visible = false; // This'll keep the engine from drawing it before we want it to
+            //blur = new GaussianBlur(Engine.GraphicsDevice.Viewport.Width, Engine.GraphicsDevice.Viewport.Height);
+            //blur.Visible = false; // This'll keep the engine from drawing it before we want it to
 
         }
 
@@ -95,17 +97,11 @@ namespace GameEnvironment
                 
                 if (Engine.GameScreens.Contains("Pause"))
                 {
-                    mouse.Position = paused_mouse_position;
-                    Engine.GameScreens.Remove("Pause");
-                    Engine.BackgroundScreen.Components.Add(keyboard);
+                    Resume(keyboard, mouse);
                 }
                 else
                 {
-                    paused_mouse_position = mouse.Position;
-                    GameScreen pause = new GameScreen("Pause");
-                    pause.Components.Add(keyboard);
-                    pause.BlocksUpdate = true;
-                    MenuItem test = new MenuItem(Engine.Content.Load<SpriteFont>("Content/MenuFont"), "Paused", pause);
+                    pause(keyboard, mouse);
                 }
             }
 
@@ -136,11 +132,56 @@ namespace GameEnvironment
             base.Update(gameTime);
         }
 
+        private void pause(KeyboardDevice keyboard, MouseDevice mouse)
+        {
+            paused_mouse_position = mouse.Position;
+            GameScreen pause = new GameScreen("Pause");
+            mouse.ResetMouseAfterUpdate = false;
+            this.IsMouseVisible = true;
+            pause.Components.Add(keyboard);
+            pause.Components.Add(mouse);
+            Engine.blur.Visible = true;
+            pause.BlocksUpdate = true;
+            //MenuItem paused = new MenuItem(Engine.Content.Load<SpriteFont>("Content/MenuFont"), "Paused", new Rectangle(350,100,100,30), pause);
+
+            MenuItem resume = new MenuItem(Engine.Content.Load<SpriteFont>("Content/MenuFont"), "Resume", new Rectangle(350, 150, 70, 30), pause);
+            resume.Subscribe((object o, InputDeviceEventArgs<MouseButtons, MouseState> args) => ResumeHandler(o, args, resume));
+            MenuItem exit = new MenuItem(Engine.Content.Load<SpriteFont>("Content/MenuFont"), "Exit", new Rectangle(350, 200, 50, 30), pause);
+            exit.Subscribe((object o, InputDeviceEventArgs<MouseButtons, MouseState> args) => Terminate(o, args, exit));
+        }
+
+        private void Resume(KeyboardDevice keyboard, MouseDevice mouse)
+        {
+            //mouse.ButtonReleased = null;
+            mouse.UnsubscribeAll();
+            mouse.Position = paused_mouse_position;
+            Engine.GameScreens["Pause"].Disable();
+            Engine.BackgroundScreen.Components.Add(keyboard);
+            Engine.BackgroundScreen.Components.Add(mouse);
+            Engine.blur.Visible = false;
+            mouse.ResetMouseAfterUpdate = true;
+            this.IsMouseVisible = false;
+        }
+
         protected override void Draw(GameTime gameTime)
         {
             Engine.Draw(gameTime, ComponentType.All);
             base.Draw(gameTime);
             //blur.Draw();
+        }
+
+        
+
+        private void Terminate(object sender, InputDeviceEventArgs<MouseButtons, MouseState> args, MenuItem subscriber)
+        {
+            if (subscriber.Rectangle.Contains(new Point(args.State.X, args.State.Y)))
+                Exit();
+        }
+
+        private void ResumeHandler(object sender, InputDeviceEventArgs<MouseButtons, MouseState> args, MenuItem subscriber)
+        {
+            if (subscriber.Rectangle.Contains(new Point(args.State.X, args.State.Y)))
+                Resume(Engine.Services.GetService<KeyboardDevice>(), Engine.Services.GetService<MouseDevice>());
         }
     }
 }

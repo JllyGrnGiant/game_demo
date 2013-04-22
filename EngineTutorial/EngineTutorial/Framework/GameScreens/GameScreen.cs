@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Innovation
 {
@@ -28,6 +31,10 @@ namespace Innovation
         // Same for input
         public bool BlocksInput = false;
         public bool OverrideInputBlocked = false;
+
+        //public bool IsMouseVisible = false;
+        //Texture2D cursorTexture = Engine.Content.Load<Texture2D>("Content/cursor");
+        //SpriteBatch cursor = new SpriteBatch(Engine.GraphicsDevice);
 
         // Whether or not we want to block our own input so we can
         // do things like loading screens that will want to accept input
@@ -108,6 +115,17 @@ namespace Innovation
         // 2D components getting in the way
         public virtual void Draw(ComponentPredicate DrawPredicate)
         {
+            //position of cursor
+            //if (IsMouseVisible)
+            //{
+                
+            //    Vector2 position = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+            //    cursor.Begin();
+            //    cursor.Draw(cursorTexture, position, Color.White);
+            //    cursor.End();
+
+            //}
+
             // Temp list
             List<Component> drawing = new List<Component>();
 

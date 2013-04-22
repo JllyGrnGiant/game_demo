@@ -35,6 +35,8 @@ namespace Innovation
             }
         }
 
+       
+
         // The change in position of the mouse between the last two frames
         public Vector2 Delta = Vector2.Zero;
 
@@ -54,6 +56,11 @@ namespace Innovation
         public event InputEventHandler<MouseButtons, MouseState> ButtonReleased;
         public event InputEventHandler<MouseButtons, MouseState> ButtonHeld;
 
+
+        public void UnsubscribeAll()
+        {
+            ButtonReleased = null;
+        }
         // Constructor gets the initial MouseState, moves the mouse to the
         // center of the screen, and does the first update
         public MouseDevice()
@@ -103,11 +110,14 @@ namespace Innovation
                 // screen space
                 Position = center;
             }
-            else
+            else{
                 // Otherwise just find the difference in position between the
                 // last two frames
                 Delta = new Vector2(current.X - last.X, current.Y - last.Y);
 
+                position += Delta;
+            }
+                
             // For each mouse button...
             foreach (MouseButtons button in Util.GetEnumValues<MouseButtons>())
             {

@@ -7,6 +7,7 @@ Content\ig_box.xnb
 Content\ig_plane.xnb
 Content\GaussianBlur.xnb
 Content\Effect1.xnb
+Content\MenuFont.xnb
 Content\ig_box_tex_0.xnb
 Content\ig_plane_tex_0.xnb
-Content\MenuFont.xnb
+Content\cursor.xnb
