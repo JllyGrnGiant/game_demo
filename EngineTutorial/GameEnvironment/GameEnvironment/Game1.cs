@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using JigLibX.Physics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -8,6 +9,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+
 using Innovation;
 
 namespace GameEnvironment
@@ -15,6 +17,7 @@ namespace GameEnvironment
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
+        Model boxModel;
         //bool fired = false;
 
         //Action delegate1 = delegate() { (object o, InputDeviceEventArgs<MouseButtons, MouseState> args) => ResumeHandler(o, args, resume); };
@@ -32,17 +35,25 @@ namespace GameEnvironment
         {
             Engine.SetupEngine(graphics);
 
-            // Create camera
-            FPSCamera camera = new FPSCamera();
-
-            // Setup its position and target
-            camera.Position = new Vector3(0, 3, 5);
+            boxModel = Engine.Content.Load<Model>("Content/ig_box");
 
             // Add services to container
-            Engine.Services.AddService(typeof(Camera), camera);
             Engine.Services.AddService(typeof(Physics), new Physics());
             Engine.Services.AddService(typeof(MouseDevice), new MouseDevice());
             Engine.Services.AddService(typeof(KeyboardDevice), new KeyboardDevice());
+
+            CharacterObject character = new CharacterObject(new Vector3(0, 3, 5));
+            
+            //Create camera
+            //CharacterObject camBox = new SphereObject(0.25f, new Vector3(0, 3, 5), Vector3.Zero);
+            //CapsuleObject camBox = new CapsuleObject(0.25f, .25f);
+            //camBox.Mass = 1000;
+            FPSCamera camera = new FPSCamera(character);
+            //camBox.Position = new Vector3(0, 3, 5);
+            Engine.Services.AddService(typeof(Camera), camera);
+
+            // Setup its position and target
+            // camera.Position = new Vector3(0, 3, 5);
 
             // Create plane
             PhysicsActor plane = new PhysicsActor(
@@ -62,13 +73,11 @@ namespace GameEnvironment
             terrain.BlueTexture = "Content/blue";
             terrain.AlphaTexture = "Content/red";
 
-            Model model = Engine.Content.Load<Model>("Content/ig_box");
-
             for (int y = 0; y < 3; ++y)
             {
                 for (int x = 0; x < 3; ++x)
                 {
-                    PhysicsActor act = new PhysicsActor(model, new BoxObject(
+                    PhysicsActor act = new PhysicsActor(boxModel, new BoxObject(
                         new Vector3(0.5f),
                         new Vector3(-0.5f + (x * 0.52f), 0.5f + (y * 0.52f), -1),
                         Vector3.Zero));
@@ -88,13 +97,13 @@ namespace GameEnvironment
             KeyboardDevice keyboard = Engine.Services.GetService<KeyboardDevice>();
             MouseDevice mouse = Engine.Services.GetService<MouseDevice>();
             FPSCamera cam = (FPSCamera)Engine.Services.GetService<Camera>();
-
+            //cam.Position = new Vector3(0, 3, 5);
             //if (keyboard.IsKeyDown(Keys.Escape))
             //    Exit();
 
             if (keyboard.WasKeyPressed(Keys.Escape))
             {
-                
+
                 if (Engine.GameScreens.Contains("Pause"))
                 {
                     Resume(keyboard, mouse);
@@ -109,22 +118,27 @@ namespace GameEnvironment
             {
                 Vector3 inputModifier = new Vector3(
                     (keyboard.IsKeyDown(Keys.A) ? -1 : 0) + (keyboard.IsKeyDown(Keys.D) ? 1 : 0),
-                    (keyboard.IsKeyDown(Keys.Q) ? -1 : 0) + (keyboard.IsKeyDown(Keys.E) ? 1 : 0),
+                     0,//(keyboard.IsKeyDown(Keys.Q) ? -1 : 0) + (keyboard.IsKeyDown(Keys.E) ? 1 : 0),
                     (keyboard.IsKeyDown(Keys.W) ? -1 : 0) + (keyboard.IsKeyDown(Keys.S) ? 1 : 0));
 
-                cam.RotateTranslate(new Vector3(mouse.Delta.Y * -0.002f, mouse.Delta.X * -0.002f, 0), inputModifier * 0.5f);
+                cam.RotateTranslate(new Vector3(mouse.Delta.Y * -0.002f, mouse.Delta.X * -0.002f, 0), inputModifier*0.5f);
+
+                if(keyboard.WasKeyPressed(Keys.Space))
+                    cam.Jump();
 
                 if (Engine.Services.GetService<MouseDevice>().WasButtonPressed(MouseButtons.Left))
                 {
-                    PhysicsActor act = new PhysicsActor(
-                        Engine.Content.Load<Model>("Content/ig_box"),
-                        new BoxObject(new Vector3(0.5f), cam.Position, Vector3.Zero));
-
-                    act.Scale = new Vector3(0.5f);
-                    act.PhysicsObject.Mass = 1000;
 
                     Vector3 dir = cam.Target - cam.Position;
                     dir.Normalize();
+                    PhysicsActor act = new PhysicsActor(
+                        boxModel,
+                        new BoxObject(new Vector3(0.5f), cam.Position + 2*dir, Vector3.Zero));
+                        //new SphereObject(0.25f, cam.Position+3*dir, Vector3.Zero));
+                    act.Scale = new Vector3(0.5f);
+                    act.PhysicsObject.Mass = 1000;
+
+                   
                     act.PhysicsObject.Velocity = dir * 10;
                 }
             }
@@ -170,7 +184,7 @@ namespace GameEnvironment
             //blur.Draw();
         }
 
-        
+
 
         private void Terminate(object sender, InputDeviceEventArgs<MouseButtons, MouseState> args, MenuItem subscriber)
         {

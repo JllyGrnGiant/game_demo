@@ -95,6 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Cameras\FPSCamera.cs" />
     <Compile Include="Components\Menu\MenuItem.cs" />
     <Compile Include="Components\Scene\Actor.cs" />
     <Compile Include="Physics\BoxObject.cs" />
@@ -105,12 +106,13 @@
     <Compile Include="Framework\Components\ComponentEnumerator.cs" />
     <Compile Include="Framework\Components\ComponentPredicate.cs" />
     <Compile Include="Framework\Engine.cs" />
-    <Compile Include="Components\Cameras\FPSCamera.cs" />
+    <Compile Include="Components\Cameras\GodCamera.cs" />
     <Compile Include="Components\Input\GamepadDevice.cs" />
     <Compile Include="Framework\GameScreens\GameScreen.cs" />
     <Compile Include="Framework\GameScreens\GameScreenCollection.cs" />
     <Compile Include="Components\PostProcessing\GaussianBlur.cs" />
     <Compile Include="Framework\Utilities\GraphicsUtil.cs" />
+    <Compile Include="Physics\CharacterObject.cs" />
     <Compile Include="Physics\HeightMapInfo.cs" />
     <Compile Include="Physics\HeightMapObject.cs" />
     <Compile Include="Framework\Services\IEContentManager.cs" />
