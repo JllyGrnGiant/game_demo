@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using JigLibX.Physics;
+using JigLibX.Collision;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -18,6 +19,10 @@ namespace GameEnvironment
     {
         GraphicsDeviceManager graphics;
         Model boxModel;
+        SoundEffect boxSpawn;
+        SoundEffect jump;
+        SoundEffect gunShot;
+
         //bool fired = false;
 
         //Action delegate1 = delegate() { (object o, InputDeviceEventArgs<MouseButtons, MouseState> args) => ResumeHandler(o, args, resume); };
@@ -36,7 +41,9 @@ namespace GameEnvironment
             Engine.SetupEngine(graphics);
 
             boxModel = Engine.Content.Load<Model>("Content/ig_box");
-
+            boxSpawn = Engine.Content.Load<SoundEffect>("Content/box_spawn");
+            jump = Engine.Content.Load<SoundEffect>("Content/jump");
+            gunShot = Engine.Content.Load<SoundEffect>("Content/gun_shot");
             // Add services to container
             Engine.Services.AddService(typeof(Physics), new Physics());
             Engine.Services.AddService(typeof(MouseDevice), new MouseDevice());
@@ -82,6 +89,7 @@ namespace GameEnvironment
                         new Vector3(-0.5f + (x * 0.52f), 0.5f + (y * 0.52f), -1),
                         Vector3.Zero));
                     act.Scale = new Vector3(0.5f);
+                    act.PhysicsObject.Mass = 1000;
                 }
             }
 
@@ -132,22 +140,56 @@ namespace GameEnvironment
                 ((CharacterObject)cam.PhysicsObject).CharacterBody.DesiredVelocity = inputModifier*5;
 
                 if (keyboard.WasKeyPressed(Keys.Space))
-                    ((CharacterObject)cam.PhysicsObject).CharacterBody.DoJump();
-
-                if (Engine.Services.GetService<MouseDevice>().WasButtonPressed(MouseButtons.Left))
                 {
+                    Character body = ((CharacterObject)cam.PhysicsObject).CharacterBody;
+                    body.DoJump();
+                    //((CharacterObject)cam.PhysicsObject).CharacterBody.DoJump();
+                    if(body.CollisionSkin.Collisions.Count > 0)
+                        jump.Play();
+                }
 
+                if (Engine.Services.GetService<MouseDevice>().WasButtonPressed(MouseButtons.Right))
+                {
                     Vector3 dir = cam.Target - cam.Position;
                     dir.Normalize();
                     PhysicsActor act = new PhysicsActor(
                         boxModel,
-                        new BoxObject(new Vector3(0.5f), cam.Position + 2*dir, Vector3.Zero));
-                        //new SphereObject(0.25f, cam.Position+3*dir, Vector3.Zero));
+                        new BoxObject(new Vector3(0.5f), cam.Position + 2 * dir, Vector3.Zero));
+                    //new SphereObject(0.25f, cam.Position+3*dir, Vector3.Zero));
                     act.Scale = new Vector3(0.5f);
                     act.PhysicsObject.Mass = 1000;
+                    act.PhysicsObject.Velocity = dir * 10;
+
+                    boxSpawn.Play();
+                }
+
+                if (Engine.Services.GetService<MouseDevice>().WasButtonPressed(MouseButtons.Left))
+                {
+                    gunShot.Play();
+                    Vector3 dir = cam.Target - cam.Position;
+                    dir.Normalize();
+                    //PhysicsActor act = new PhysicsActor(
+                    //    boxModel,
+                    //    new BoxObject(new Vector3(0.5f), cam.Position + 2*dir, Vector3.Zero));
+                    //    //new SphereObject(0.25f, cam.Position+3*dir, Vector3.Zero));
+                    //act.Scale = new Vector3(0.5f);
+                    //act.PhysicsObject.Mass = 1000;
 
                    
-                    act.PhysicsObject.Velocity = dir * 10;
+                    //act.PhysicsObject.Velocity = dir * 10;
+                    float dist;
+                    CollisionSkin skin;
+                    Vector3 pos, normal;
+
+                    ImmovableSkinPredicate pred = new ImmovableSkinPredicate();
+                    JigLibX.Geometry.Segment seg = new JigLibX.Geometry.Segment(cam.Position, dir * 1000000000.0f);
+
+                    Engine.Services.GetService<Physics>().PhysicsSystem.CollisionSystem.SegmentIntersect(out dist, out skin, out pos, out normal, seg, pred);
+
+                    if (skin != null)
+                    {
+                        skin.Owner.Velocity = dir*10;
+                    }
                 }
             }
 
@@ -204,6 +246,20 @@ namespace GameEnvironment
         {
             if (subscriber.Rectangle.Contains(new Point(args.State.X, args.State.Y)))
                 Resume(Engine.Services.GetService<KeyboardDevice>(), Engine.Services.GetService<MouseDevice>());
+        }
+    }
+
+    public class ImmovableSkinPredicate : CollisionSkinPredicate1
+    {
+        CharacterObject character = (CharacterObject)((FPSCamera)Engine.Services.GetService<Camera>()).PhysicsObject;
+
+        public override bool ConsiderSkin(CollisionSkin skin0)
+        {
+            if (skin0.Owner != null && skin0.Owner != character.CharacterBody  && !skin0.Owner.Immovable)
+                return true;
+
+            else
+                return false;
         }
     }
 }

@@ -156,6 +156,33 @@
       <Output>C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\cursor.xnb</Output>
       <Time>2013-04-21T17:27:31.736743-06:00</Time>
     </Item>
+    <Item>
+      <Source>gun_shot.wav</Source>
+      <Name>gun_shot</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\gun_shot.xnb</Output>
+      <Time>2013-05-08T10:44:17.6289366-06:00</Time>
+    </Item>
+    <Item>
+      <Source>jump.wav</Source>
+      <Name>jump</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\jump.xnb</Output>
+      <Time>2013-05-08T10:05:40.8694554-06:00</Time>
+    </Item>
+    <Item>
+      <Source>box_spawn.wav</Source>
+      <Name>box_spawn</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\box_spawn.xnb</Output>
+      <Time>2013-05-08T10:05:40.8654527-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

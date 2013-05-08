@@ -11,3 +11,6 @@ Content\MenuFont.xnb
 Content\ig_box_tex_0.xnb
 Content\ig_plane_tex_0.xnb
 Content\cursor.xnb
+Content\gun_shot.xnb
+Content\jump.xnb
+Content\box_spawn.xnb
