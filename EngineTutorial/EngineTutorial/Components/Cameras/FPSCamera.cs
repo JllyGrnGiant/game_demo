@@ -7,7 +7,6 @@ namespace Innovation
     {
         public PhysicsObject PhysicsObject;
         Vector3 rotation;
-        Vector3 translation;
 
         public FPSCamera(PhysicsObject Object, GameScreen Parent) : base(Parent)
         {
@@ -29,10 +28,6 @@ namespace Innovation
         {
             Position = PhysicsObject.Position;
             Rotation = MathUtil.Vector3ToMatrix(rotation);
-            translation = Vector3.Transform(translation, Rotation);
-            translation = new Vector3(translation.X, 0, translation.Z);
-            //if (translation != Vector3.Zero)
-            //    PhysicsObject.Velocity += translation;
             
             Target = Vector3.Add(Position, Rotation.Forward);
 
@@ -40,9 +35,8 @@ namespace Innovation
         }
 
         // Adds to rotation and translation to change camera view
-        public void RotateTranslate(Vector3 Rotation, Vector3 Translation)
+        public void Rotate(Vector3 Rotation)
         {
-            translation = Translation;
             rotation += Rotation;
         }
     }

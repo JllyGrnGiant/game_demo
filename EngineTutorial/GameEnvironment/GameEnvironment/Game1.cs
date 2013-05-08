@@ -121,10 +121,18 @@ namespace GameEnvironment
                      0,//(keyboard.IsKeyDown(Keys.Q) ? -1 : 0) + (keyboard.IsKeyDown(Keys.E) ? 1 : 0),
                     (keyboard.IsKeyDown(Keys.W) ? -1 : 0) + (keyboard.IsKeyDown(Keys.S) ? 1 : 0));
 
-                cam.RotateTranslate(new Vector3(mouse.Delta.Y * -0.002f, mouse.Delta.X * -0.002f, 0), inputModifier*0.5f);
+                cam.Rotate(new Vector3(mouse.Delta.Y * -0.002f, mouse.Delta.X * -0.002f, 0));
 
-                if(keyboard.WasKeyPressed(Keys.Space))
-                    cam.Jump();
+                //Matrix camRotation = Matrix.CreateRotationX(MathUtil.MatrixToVector3(cam.Rotation).X) *
+                //    Matrix.CreateRotationY(MathUtil.MatrixToVector3(cam.Rotation).Y);
+                //inputModifier = Vector3.Transform(inputModifier, cam.Rotation);
+                //JigLibX.Math.JiggleMath.NormalizeSafe(ref inputModifier);
+                //inputModifier *= 10f;
+
+                ((CharacterObject)cam.PhysicsObject).CharacterBody.DesiredVelocity = inputModifier;
+
+                if (keyboard.WasKeyPressed(Keys.Space))
+                    ((CharacterObject)cam.PhysicsObject).CharacterBody.DoJump();
 
                 if (Engine.Services.GetService<MouseDevice>().WasButtonPressed(MouseButtons.Left))
                 {

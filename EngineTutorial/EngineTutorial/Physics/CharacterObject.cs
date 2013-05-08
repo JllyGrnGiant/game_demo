@@ -17,7 +17,7 @@ namespace Innovation
             Body = new Character();
             CollisionSkin = new CollisionSkin(Body);
 
-            Capsule capsule = new Capsule(Vector3.Zero, Matrix.CreateRotationX(MathHelper.PiOver2), 1.0f, 1.0f);
+            Sphere capsule = new Sphere(Vector3.Zero, .5f);
             CollisionSkin.AddPrimitive(capsule, (int)MaterialTable.MaterialID.NotBouncyNormal);
             Body.CollisionSkin = this.CollisionSkin;
             Vector3 com = SetMass(1.0f);
