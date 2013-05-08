@@ -125,11 +125,11 @@ namespace GameEnvironment
 
                 //Matrix camRotation = Matrix.CreateRotationX(MathUtil.MatrixToVector3(cam.Rotation).X) *
                 //    Matrix.CreateRotationY(MathUtil.MatrixToVector3(cam.Rotation).Y);
-                //inputModifier = Vector3.Transform(inputModifier, cam.Rotation);
+                inputModifier = Vector3.Transform(inputModifier, cam.Rotation);
                 //JigLibX.Math.JiggleMath.NormalizeSafe(ref inputModifier);
                 //inputModifier *= 10f;
 
-                ((CharacterObject)cam.PhysicsObject).CharacterBody.DesiredVelocity = inputModifier;
+                ((CharacterObject)cam.PhysicsObject).CharacterBody.DesiredVelocity = inputModifier*5;
 
                 if (keyboard.WasKeyPressed(Keys.Space))
                     ((CharacterObject)cam.PhysicsObject).CharacterBody.DoJump();

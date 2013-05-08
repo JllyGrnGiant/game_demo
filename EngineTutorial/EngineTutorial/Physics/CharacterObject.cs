@@ -17,15 +17,15 @@ namespace Innovation
             Body = new Character();
             CollisionSkin = new CollisionSkin(Body);
 
-            Sphere capsule = new Sphere(Vector3.Zero, .5f);
+            Capsule capsule = new Capsule(Vector3.Zero, Matrix.CreateRotationX(MathHelper.PiOver2), 1.0f, 1.0f);
             CollisionSkin.AddPrimitive(capsule, (int)MaterialTable.MaterialID.NotBouncyNormal);
             Body.CollisionSkin = this.CollisionSkin;
             Vector3 com = SetMass(1.0f);
-            Mass = 1000;
+            Body.Mass = 1000;
             Body.MoveTo(position + com, Matrix.Identity);
             CollisionSkin.ApplyLocalTransform(new Transform(-com, Matrix.Identity));
 
-            //Body.SetBodyInertia(0.0f, 0.0f, 0.0f);
+            Body.SetBodyInvInertia(0.0f, 0.0f, 0.0f);
 
             CharacterBody = Body as Character;
 
