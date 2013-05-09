@@ -98,6 +98,7 @@
     <Compile Include="Components\Cameras\FPSCamera.cs" />
     <Compile Include="Components\Menu\MenuItem.cs" />
     <Compile Include="Components\Scene\Actor.cs" />
+    <Compile Include="CrossHair.cs" />
     <Compile Include="Physics\BoxObject.cs" />
     <Compile Include="Components\Cameras\Camera.cs" />
     <Compile Include="Physics\CapsuleObject.cs" />

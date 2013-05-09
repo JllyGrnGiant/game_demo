@@ -183,6 +183,15 @@
       <Output>C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\box_spawn.xnb</Output>
       <Time>2013-05-08T10:05:40.8654527-06:00</Time>
     </Item>
+    <Item>
+      <Source>heightmap2.png</Source>
+      <Name>heightmap2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Esteban\Documents\game_demo\EngineTutorial\GameEnvironment\GameEnvironment\bin\x86\Debug\Content\heightmap2.xnb</Output>
+      <Time>2013-05-08T22:11:25.4691058-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

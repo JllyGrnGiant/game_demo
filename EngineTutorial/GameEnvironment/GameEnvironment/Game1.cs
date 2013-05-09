@@ -69,7 +69,7 @@ namespace GameEnvironment
                 Engine.Content.Load<Texture2D>("Content/heightmap"),
                 Engine.Content.Load<Texture2D>("Content/grass"));
             */
-            Terrain2 terrain = new Terrain2(Engine.Content.Load<Texture2D>("Content/heightmap"));
+            Terrain2 terrain = new Terrain2(Engine.Content.Load<Texture2D>("Content/heightmap2"));
             terrain.TextureMap = "Content/grass";
             terrain.RedTexture = "Content/grass";
             terrain.GreenTexture = "Content/blue";
@@ -91,6 +91,7 @@ namespace GameEnvironment
 
             //blur = new GaussianBlur(Engine.GraphicsDevice.Viewport.Width, Engine.GraphicsDevice.Viewport.Height);
             //blur.Visible = false; // This'll keep the engine from drawing it before we want it to
+            new CrossHair();
 
         }
 
