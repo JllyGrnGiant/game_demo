@@ -53,7 +53,7 @@ namespace Innovation
             Vector2 position = new Vector2(Rectangle.Left, Rectangle.Top);
             Texture2D tex = new Texture2D(Engine.GraphicsDevice, 1, 1);
             tex.SetData(new Color[] {Color.Black} );
-            spriteBatch.Draw(tex, Rectangle, Color.Black);
+            //spriteBatch.Draw(tex, Rectangle, Color.Black);
             spriteBatch.DrawString(spriteFont, menuText, position, Color.White);
             spriteBatch.End();
         }

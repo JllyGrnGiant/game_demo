@@ -76,16 +76,16 @@ namespace Innovation
 
             Vector3 deltaVel = DesiredVelocity - Velocity;
 
-            bool running = true;
+            //bool running = true;
 
-            if (DesiredVelocity.LengthSquared() < JiggleMath.Epsilon) running = false;
-            else deltaVel.Normalize();
+            //if (DesiredVelocity.LengthSquared() < JiggleMath.Epsilon) running = false;
+            //else deltaVel.Normalize();
 
             deltaVel.Y = 0.0f;
 
             // start fast, slow down slower
-            if (running) deltaVel *= 10.0f;
-            else deltaVel *= 2.0f;
+            //if (running) deltaVel *= 10.0f;
+            //else deltaVel *= 2.0f;
 
             float forceFactor = 1000.0f;
 

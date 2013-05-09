@@ -51,10 +51,6 @@ namespace GameEnvironment
 
             CharacterObject character = new CharacterObject(new Vector3(0, 3, 5));
             
-            //Create camera
-            //CharacterObject camBox = new SphereObject(0.25f, new Vector3(0, 3, 5), Vector3.Zero);
-            //CapsuleObject camBox = new CapsuleObject(0.25f, .25f);
-            //camBox.Mass = 1000;
             FPSCamera camera = new FPSCamera(character);
             //camBox.Position = new Vector3(0, 3, 5);
             Engine.Services.AddService(typeof(Camera), camera);
@@ -89,7 +85,7 @@ namespace GameEnvironment
                         new Vector3(-0.5f + (x * 0.52f), 0.5f + (y * 0.52f), -1),
                         Vector3.Zero));
                     act.Scale = new Vector3(0.5f);
-                    act.PhysicsObject.Mass = 1000;
+                    act.PhysicsObject.Mass = 5000;
                 }
             }
 
@@ -157,7 +153,7 @@ namespace GameEnvironment
                         new BoxObject(new Vector3(0.5f), cam.Position + 2 * dir, Vector3.Zero));
                     //new SphereObject(0.25f, cam.Position+3*dir, Vector3.Zero));
                     act.Scale = new Vector3(0.5f);
-                    act.PhysicsObject.Mass = 1000;
+                    act.PhysicsObject.Mass = 5000;
                     act.PhysicsObject.Velocity = dir * 10;
 
                     boxSpawn.Play();
@@ -168,12 +164,6 @@ namespace GameEnvironment
                     gunShot.Play();
                     Vector3 dir = cam.Target - cam.Position;
                     dir.Normalize();
-                    //PhysicsActor act = new PhysicsActor(
-                    //    boxModel,
-                    //    new BoxObject(new Vector3(0.5f), cam.Position + 2*dir, Vector3.Zero));
-                    //    //new SphereObject(0.25f, cam.Position+3*dir, Vector3.Zero));
-                    //act.Scale = new Vector3(0.5f);
-                    //act.PhysicsObject.Mass = 1000;
 
                    
                     //act.PhysicsObject.Velocity = dir * 10;
@@ -188,7 +178,8 @@ namespace GameEnvironment
 
                     if (skin != null)
                     {
-                        skin.Owner.Velocity = dir*10;
+                        ((BoxBody)skin.Owner).DesiredForce = dir;
+                        
                     }
                 }
             }

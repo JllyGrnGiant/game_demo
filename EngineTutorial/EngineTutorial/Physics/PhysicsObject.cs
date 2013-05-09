@@ -79,7 +79,7 @@ namespace Innovation
         public PhysicsObject(GameScreen Parent) : base(Parent) { }
 
         // Sets up body and collision skin
-        protected void InitializeBody()
+        protected virtual void InitializeBody()
         {
             Body = new Body();
             CollisionSkin = new CollisionSkin(Body);
